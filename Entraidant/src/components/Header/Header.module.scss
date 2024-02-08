@@ -1,0 +1,49 @@
+// @media queries a rajouter pour le button pour gere menu de connection en device /* index.scss */
+
+@use "../../assets/styles/mixins" as mixin;
+
+.header {
+  position: relative;
+  padding: 0.5rem 2rem;
+  height: 80px;
+  background-color: white;
+  box-shadow: var(--box-shadow-nav) ;
+  color: var(--primary);
+  img {
+    width: 50px;
+    border-radius: 20px;
+  }
+}
+
+.headerList {
+  @include mixin.xs {
+    display: none;
+  }
+}
+
+.headerXs {
+  @include mixin.xs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 1rem;
+  }
+ }
+
+
+
+
+
+.burgerMenuXs {
+  display: none;
+  cursor: pointer;
+  opacity: 0.2s;
+  &:hover{
+    opacity: 0.8;
+  }
+  @include mixin.xs {
+    display: block;
+  }
+}
+
+
