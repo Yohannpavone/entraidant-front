@@ -1,6 +1,7 @@
 @use './variables';
-@use './base.scss';
+@use './reset.scss';
 @use './flex.scss';
 @use './utils.scss';
 @use './debug';
-@use './themes'
+@use './themes';
+

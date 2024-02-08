@@ -1,7 +1,29 @@
 @use "../../assets/styles/mixins" as mixin;
 
 .footer {
-  background-color: var(--gray-1);
+  background-color: var(--primary);
   color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
+.link {
+  color: white;
+  border: 1px white solid;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+}
+
+.footerXs {
+  @include mixin.xs {
+    position: relative;
+    height: 5rem;
+    flex-direction: column;
+    p {
+      display: inline;
+      margin:0.5rem;
+    }
+  }
+}

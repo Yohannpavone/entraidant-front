@@ -1,9 +1,62 @@
+import styles from "./Homepage.module.scss";
+import accueil from "../../../public/img/accueil.png";
+
 function Homepage() {
   return (
-    <div className="d-flex flex-row container p-20 justify-content-center">
-      <h1 className="align-items-center ">Bienvenue sur Entraidant, une plateforme dédiée à créer des liens solides et à offrir une assistance précieuse à ceux qui vivent avec des défis physiques, moteurs ou mentaux. </h1>
+    <div
+      className={` ${styles.mainContainerXs} d-flex flex-column p-20 justify-content-center`}
+    >
+      <div
+        className={` ${styles.containerCardXs} d-flex justify-content-center space-between mb-20`}
+      >
+        <div
+          className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex flex-column align-items-center justify-content-center`}
+        >
+          <h4>Démarches</h4>
+        </div>
+        <div
+          className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
+        >
+          <h4>Spécialistes</h4>
+        </div>
+        <div
+          className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
+        >
+          <h4>Services</h4>
+        </div>
+        <div
+          className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
+        >
+          <h4>Messagerie</h4>
+        </div>
+      </div>
+      <div className="d-flex">
+        <img
+          className={`${styles.homepageImg} ${styles.homepageImgXs}`}
+          src={accueil}
+          alt="image représentant deux mains jointes"
+        />
+        <p className={`align-items-center ${styles.homepageText}`}>
+          Bienvenue sur Entraidant, un havre virtuel dédié à tisser des liens
+          solides et à fournir une assistance inestimable à ceux qui traversent
+          des défis physiques, moteurs ou mentaux.
+          <p>
+            Notre plateforme offre un espace bienveillant où la communauté se
+            rassemble pour partager son soutien, son expérience et ses
+            ressources.
+          </p>{" "}
+          <p>
+            Que vous soyez en quête de conseils pratiques, d'encouragements
+            chaleureux ou simplement d'une oreille attentive, Entraidant est là
+            pour vous accompagner à chaque étape de votre parcours. Ensemble,
+            nous pouvons surmonter les obstacles et construire un avenir plus
+            inclusif et solidaire.
+          </p>
+          Rejoignez-nous dès aujourd'hui et découvrez la force de l'entraide !
+        </p>
+      </div>
     </div>
   );
 }
 
-export default Homepage ;
+export default Homepage;

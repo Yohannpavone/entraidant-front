@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Header.module.scss";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu.jsx";
 import logo from "../../../public/img/logoEntraidant.png";
+import HeaderForm from "./components/HeaderForm/HeaderForm.jsx";
 
 // import logo from "../../../public/img/logo.png";
 
@@ -13,17 +14,15 @@ function Header() {
     >
      <img src={logo} alt="Entraidant logo" />
       <div className=" ">
-        <h1 className="header-title">Entraidant</h1>
+        <h1>Entraidant</h1>
       </div>
+      <HeaderForm/>
 
-      <ul className={styles.headerList}>
-        <button className="mr-5 btn btn-reverse-primary ">
+      <div className={styles.headerListXs}>
+        <button className="btn btn-primary">
           <span>inscription</span>
         </button>
-        <button className="btn btn-primary">
-          <span>connexion</span>
-        </button>
-      </ul>
+      </div>
       <i
         onClick={() => setShowMenu(true)}
         className={`fa-solid fa-bars mr-15 ${styles.burgerMenuXs}`}
