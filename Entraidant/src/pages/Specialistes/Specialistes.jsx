@@ -1,5 +1,5 @@
 import logo from "../../../public/img/logoEntraidant.png"
-import styles from "../Specialiste/specialiste.module.scss";
+import styles from "./Specialistes.module.scss";
 import SpecialistesCard from "../SpecialistesCard/SpecialistesCard"; 
 
 function Specialiste() {

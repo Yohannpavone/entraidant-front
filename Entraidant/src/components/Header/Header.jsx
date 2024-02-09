@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu.jsx";
 import logo from "../../../public/img/logoEntraidant.png";
 import HeaderForm from "./components/HeaderForm/HeaderForm.jsx";
+import { Link } from "react-router-dom";
 
 // import logo from "../../../public/img/logo.png";
 
@@ -18,11 +19,11 @@ function Header() {
       </div>
       <HeaderForm/>
 
-      <div className={styles.headerListXs}>
+      <Link to="/login" className={styles.headerListXs}>
         <button className="btn btn-primary">
           <span>inscription</span>
         </button>
-      </div>
+      </Link>
       <i
         onClick={() => setShowMenu(true)}
         className={`fa-solid fa-bars mr-15 ${styles.burgerMenuXs}`}

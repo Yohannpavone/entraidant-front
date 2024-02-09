@@ -1,11 +1,10 @@
-import Header from "../../components/Header/Header"; 
+
 import logo from "../../../public/img/logoEntraidant.png";
-import styles from "./QuiSommesNous.module.scss"; 
+import styles from "./AboutUs.module.scss"; 
 
 function QuiSommesNous() {
   return (
     <div>
-      <Header />
       <div className={styles.container}>
         <div className={styles.content}>
           <h1>Qui sommes-nous ?</h1>
