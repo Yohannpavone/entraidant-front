@@ -1,5 +1,6 @@
 import styles from "./Homepage.module.scss";
 import accueil from "../../../public/img/accueil.png";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -9,26 +10,26 @@ function Homepage() {
       <div
         className={` ${styles.containerCardXs} d-flex justify-content-center space-between mb-20`}
       >
-        <div
+        <Link to="/demarches"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex flex-column align-items-center justify-content-center`}
         >
           <h4>Démarches</h4>
-        </div>
-        <div
+        </Link>
+        <Link to="/specialistes"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
         >
           <h4>Spécialistes</h4>
-        </div>
-        <div
+        </Link>
+        <Link to="/services"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
         >
           <h4>Services</h4>
-        </div>
-        <div
+        </Link>
+        <Link to="/messagerie"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
         >
           <h4>Messagerie</h4>
-        </div>
+        </Link>
       </div>
       <div className="d-flex">
         <img
