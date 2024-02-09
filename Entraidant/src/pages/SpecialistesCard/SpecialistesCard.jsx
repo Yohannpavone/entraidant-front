@@ -1,4 +1,4 @@
-import logo from "../../../public/img/logoEntraidant.png";
+
 // eslint-disable-next-line no-unused-vars
 import styles from"../../pages/SpecialistesCard/SpecialistesCard.module.scss"
 
@@ -9,7 +9,7 @@ function SpecialistesCard({ items }) {
 
     return (
         <div>
-            <img src={logo} alt="Entraidant logo" />
+            
             {items.map((item, index) => (
                 <div key={index} className="specialistesCard">
                     <h3>{item.nom}</h3>
