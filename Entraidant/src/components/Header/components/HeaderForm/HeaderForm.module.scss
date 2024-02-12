@@ -6,13 +6,12 @@
   }
 }
 
-input {
+.headerInput {
   width: 7rem;
   height: 1.6rem;
   border: 0.1rem var(--primary) solid;
   padding-left: 1rem;
- 
-}
+ }
 
 .inputMail {
   border-radius: 10px 0 0 10px;
@@ -30,6 +29,6 @@ input {
   }
 }
 
-form {
+.form {
   margin-left: 20rem;
 }

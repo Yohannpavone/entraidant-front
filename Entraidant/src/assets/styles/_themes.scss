@@ -1,6 +1,6 @@
 .btn {
   padding: 5px 15px;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.2s;
   &:hover {
@@ -21,10 +21,29 @@
 }
 
 .card {
-  border-radius: 20px;
+  border-radius: 0px;
   background-color: white;
 }
 
 .text-primary {
   color: var(--primary);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.input {
+  padding: 10px 15px;
+  border: 2px solid var(--gray-2);
+  border-radius: 4px;
+}
+
+.form-error {
+  color: rgba(192, 57, 43,1.0);
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
 }

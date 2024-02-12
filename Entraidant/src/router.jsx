@@ -6,7 +6,7 @@ import AboutUs from "./pages/AboutUs/AboutUs.jsx"
 import Demarches from "./pages/Demarches/Demarches.jsx";
 import ServicesExchange from "./pages/ServicesExchange/ServicesExchange.jsx"
 import Messagerie from "./pages/Messagerie/Messagerie.jsx";
-import Login from "./pages/Login/Login.jsx";
+import SignUp from "./pages/SignUp/SignUp.jsx";
 
 
 export const router = createBrowserRouter([
@@ -39,9 +39,10 @@ export const router = createBrowserRouter([
         element:<Messagerie/>
       },
       {
-        path: "/login",
-        element:<Login/>
+        path: "/signup",
+        element:<SignUp/>
       },
+
     ]
   }
 ])
