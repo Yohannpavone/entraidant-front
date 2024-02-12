@@ -13,8 +13,8 @@ function SpecialistesCard({ items }) {
             {items.map((item, index) => (
                 <div key={index} className="specialistesCard">
                     <h3>{item.nom}</h3>
-                    <p>Spécialité: {item.specialite}</p>
-                    <p>Localisation: {item.location}</p>
+                    <p>Spécialité: {item.libelleProfession}</p>
+                    <p>Localisation: {item.numeroVoie} {item.libelleVoie}, {item.codePostal} {item.bureauCedex}</p>
 
                     <div className="Name">
                         <button onClick={() => handleClick('/nom-page')}>Voir profil</button>
