@@ -1,16 +1,11 @@
-import styles from "./SignUp.module.scss";
+import styles from "./SignIn.module.scss";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate } from "react-router-dom";
+import { signin } from "../../apis/auth.jsx";
 
-function SignUp() {
-  const navigate = useNavigate();
+function SignIn() {
   const validationSchema = yup.object({
-    name: yup
-      .string()
-      .required("Il faut préciser votre nom")
-      .min(2, "Un vrai nom"),
     email: yup
       .string()
       .required("Il faut votre email")
@@ -19,17 +14,9 @@ function SignUp() {
       .string()
       .required("Il faut préciser votre mot de passe")
       .min(6, "Mot de passe trop court"),
-    confirmPassword: yup
-      .string()
-      .required("Vous devez confirmer votre mot de passe")
-      .oneOf(
-        [yup.ref("password"), ""],
-        "Les mots de passe ne correspondent pas"
-      ),
   });
 
   const initialValues = {
-    name: "",
     email: "",
     password: "",
   };
@@ -43,16 +30,16 @@ function SignUp() {
   } = useForm({
     initialValues,
     resolver: yupResolver(validationSchema),
-    mode: "onSubmit",
   });
 
-  const submit = handleSubmit(async (user) => {
-    console.log(user);
+  const submit = handleSubmit(async (credentials) => {
+    console.log(credentials);
     try {
       clearErrors();
-      // const user =
-      await createUser(user);
-      navigate("/signin");
+      const user = await signin();
+      console.log(user);
+      // const user = await createUser(credentials);
+      // navigate("/signin");
     } catch (message) {
       setError("generic", { type: "generic", message });
     }
@@ -63,19 +50,7 @@ function SignUp() {
         onSubmit={submit}
         className={`${styles.form} d-flex flex-column card p-20`}
       >
-        <h2 className="mb-10">Inscription</h2>
-        <div className="mb-10 d-flex flex-column ">
-          <label className="label" htmlFor="name">
-            Nom
-          </label>
-          <input
-            className="input"
-            type="text"
-            name="name"
-            {...register("name")}
-          />
-          {errors.name && <p className="form-error">{errors.name.message}</p>}
-        </div>
+        <h2 className="mb-10">Connexion</h2>
         <div className="mb-10 d-flex flex-column">
           <label className="label" htmlFor="email">
             Email
@@ -99,22 +74,8 @@ function SignUp() {
             {...register("password")}
           />
           {errors.password && (
-            <p className="form-error">{errors.password.message}</p>
-          )}
-        </div>
-        <div className="mb-10 d-flex flex-column">
-          <label className="label" htmlFor="email">
-            Confirmation password
-          </label>
-          <input
-            className="input"
-            type="password"
-            name="password"
-            {...register("confirmPassword")}
-          />
-          {errors?.confirmPassword && (
             <div className="mb-10">
-              <p className="form-error">{errors.confirmPassword.message}</p>
+              <p className="form-error">{errors.password.message}</p>
             </div>
           )}
         </div>
@@ -123,7 +84,7 @@ function SignUp() {
         )}
         <div>
           <button disabled={isSubmitting} className="btn btn-primary">
-            Inscription
+            Connexion
           </button>
         </div>
       </form>
@@ -131,4 +92,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignIn;

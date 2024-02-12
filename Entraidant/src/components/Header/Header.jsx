@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Header.module.scss";
-import HeaderMenu from "./components/HeaderMenu/HeaderMenu.jsx";
+// import HeaderMenu from "./components/HeaderMenu/HeaderMenu.jsx";
 import logo from "../../../public/img/logoEntraidant.png";
-import HeaderForm from "./components/HeaderForm/HeaderForm.jsx";
+// import HeaderForm from "./components/HeaderForm/HeaderForm.jsx";
 import { NavLink } from "react-router-dom";
 
 // import logo from "../../../public/img/logo.png";
@@ -20,13 +20,20 @@ function Header() {
       <div className=" ">
         <h1>Entraidant</h1>
       </div>
-      <HeaderForm />
 
-      <NavLink to="/signup" className={styles.headerListXs}>
-        <button className="btn btn-primary">
-          <span>inscription</span>
-        </button>
-      </NavLink>
+      <div>
+        <NavLink to="/signin" className={styles.headerListXs}>
+          <button className="btn btn-primary mr-15">
+            <span>Connexion</span>
+          </button>
+        </NavLink>
+        <NavLink to="/signup" className={styles.headerListXs}>
+          <button className="btn btn-primary mr-15">
+            <span>Inscription</span>
+          </button>
+        </NavLink>
+      </div>
+
       <i
         onClick={() => setShowMenu(true)}
         className={`fa-solid fa-bars mr-15 ${styles.burgerMenuXs}`}
@@ -34,7 +41,6 @@ function Header() {
       {showMenu && (
         <>
           <div onClick={() => setShowMenu(false)} className="calc"></div>
-          <HeaderMenu />
         </>
       )}
     </header>
