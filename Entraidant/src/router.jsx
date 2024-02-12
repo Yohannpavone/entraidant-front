@@ -6,13 +6,17 @@ import AboutUs from "./pages/AboutUs/AboutUs.jsx"
 import Demarches from "./pages/Demarches/Demarches.jsx";
 import ServicesExchange from "./pages/ServicesExchange/ServicesExchange.jsx"
 import Messagerie from "./pages/Messagerie/Messagerie.jsx";
-import Login from "./pages/Login/Login.jsx";
+import SignUp from "./pages/SignUp/SignUp.jsx";
+import SignIn from "./pages/SignIn/SignIn.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
+import { rootLoader } from "./loaders/rootLoader.jsx";
 
 
 export const router = createBrowserRouter([
   {
     path:"/",
     element:<App/>,
+    // loader: rootLoader,
     children: [
       {
         path: "/",
@@ -39,9 +43,18 @@ export const router = createBrowserRouter([
         element:<Messagerie/>
       },
       {
-        path: "/login",
-        element:<Login/>
+        path: "/signup",
+        element:<SignUp/>
       },
+      {
+        path: "/signin",
+        element: <SignIn/>
+      },
+      {
+        path: "/profile",
+        element: <Profile/>
+      }
+
     ]
   }
 ])

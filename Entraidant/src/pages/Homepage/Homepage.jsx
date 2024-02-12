@@ -1,6 +1,6 @@
 import styles from "./Homepage.module.scss";
 import accueil from "../../../public/img/accueil.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -10,26 +10,26 @@ function Homepage() {
       <div
         className={` ${styles.containerCardXs} d-flex justify-content-center space-between mb-20`}
       >
-        <Link to="/demarches"
+        <NavLink to="/demarches"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex flex-column align-items-center justify-content-center`}
         >
           <h4>Démarches</h4>
-        </Link>
-        <Link to="/specialistes"
+        </NavLink>
+        <NavLink to="/specialistes"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
         >
           <h4>Spécialistes</h4>
-        </Link>
-        <Link to="/services"
+        </NavLink>
+        <NavLink to="/services"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
         >
           <h4>Services</h4>
-        </Link>
-        <Link to="/messagerie"
+        </NavLink>
+        <NavLink to="/messagerie"
           className={`${styles.homepageLink} ${styles.cardXs} mt-30 d-flex align-items-center justify-content-center`}
         >
           <h4>Messagerie</h4>
-        </Link>
+        </NavLink>
       </div>
       <div className="d-flex">
         <img
