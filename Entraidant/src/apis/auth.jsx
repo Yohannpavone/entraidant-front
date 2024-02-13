@@ -31,3 +31,4 @@ export async function signout() {
     method: 'DELETE',
   })
 }
+
