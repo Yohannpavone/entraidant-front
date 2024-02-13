@@ -9,7 +9,10 @@ import Messagerie from "./pages/Messagerie/Messagerie.jsx";
 import SignUp from "./pages/SignUp/SignUp.jsx";
 import SignIn from "./pages/SignIn/SignIn.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
-import { rootLoader } from "./loaders/rootLoader.jsx";
+import ServiceForm from'./pages/ServicesExchange/ServiceForm.jsx'
+
+
+// import { rootLoader } from "./loaders/rootLoader.jsx";
 
 
 export const router = createBrowserRouter([
@@ -34,10 +37,16 @@ export const router = createBrowserRouter([
         path: "/demarches",
         element:<Demarches/>
       },
+    
       {
         path: "/services",
         element:<ServicesExchange/>
       },
+      {
+        path: "/servicesform",
+        element:<ServiceForm/>
+      },
+
       {
         path: "/messagerie",
         element:<Messagerie/>
