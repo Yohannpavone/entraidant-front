@@ -4,7 +4,7 @@ import styles from "./AboutUs.module.scss";
 
 function AboutUs() {
   return (
-    <div>
+    <div className={styles.ultimateContainer}>
       <div className={styles.container}>
         <div className={styles.content}>
           <h1>Qui sommes-nous ?</h1>

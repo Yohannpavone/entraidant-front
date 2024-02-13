@@ -3,6 +3,19 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
 import App from "./App/App.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
+import Homepage from "./pages/Homepage/Homepage.jsx";
+import Specialistes from "./pages/Specialistes/Specialistes.jsx";
+import AboutUs from "./pages/AboutUs/AboutUs.jsx"
+import Demarches from "./pages/Demarches/Demarches.jsx";
+import ServicesExchange from "./pages/ServicesExchange/ServicesExchange.jsx"
+import Messagerie from "./pages/Messagerie/Messagerie.jsx";
+import SignUp from "./pages/SignUp/SignUp.jsx";
+import SignIn from "./pages/SignIn/SignIn.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
+import ServiceForm from'./pages/ServicesExchange/ServiceForm.jsx'
+
+
+// import { rootLoader } from "./loaders/rootLoader.jsx";
 
 
 // lazy loading permet de ne pas charger tous les modules lors de la première connexion au site
@@ -41,10 +54,16 @@ export const router = createBrowserRouter([
         path: "/demarches",
         element: <Demarches />,
       },
+    
       {
         path: "/services",
         element: <ServicesExchange />,
       },
+      {
+        path: "/servicesform",
+        element:<ServiceForm/>
+      },
+
       {
         path: "/messagerie",
         element: <Messagerie />,
