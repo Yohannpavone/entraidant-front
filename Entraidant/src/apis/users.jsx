@@ -1,6 +1,6 @@
-const API_USERS = "/api/users";
+const API_USERS = "https://entraidant-back.onrender.com/login/signup";
 
-export async function createBrowserRouter(newUser) {
+export async function createUser(newUser) {
   const response = await fetch(API_USERS, {
     method: "POST",
     headers: {

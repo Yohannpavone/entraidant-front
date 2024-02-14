@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signin } from "../../apis/auth.jsx";
 
-function SignIn() {
+function Signin() {
   const validationSchema = yup.object({
     email: yup
       .string()
@@ -33,11 +33,10 @@ function SignIn() {
   });
 
   const submit = handleSubmit(async (credentials) => {
-    console.log(credentials);
+    // console.log(credentials);
     try {
       clearErrors();
-      const user = await signin();
-      console.log(user);
+      await signin(credentials);
       // const user = await createUser(credentials);
       // navigate("/signin");
     } catch (message) {
@@ -59,18 +58,20 @@ function SignIn() {
             className="input"
             type="text"
             name="email"
+            id="email"
             {...register("email")}
           />
           {errors.email && <p className="form-error">{errors.email.message}</p>}
         </div>
         <div className="mb-10 d-flex flex-column">
-          <label className="label" htmlFor="email">
+          <label className="label" htmlFor="password">
             Password
           </label>
           <input
             className="input"
             type="password"
             name="password"
+            id="password"
             {...register("password")}
           />
           {errors.password && (
@@ -80,7 +81,7 @@ function SignIn() {
           )}
         </div>
         {errors.generic && (
-          <p className="form-erroor"> {errors.generic.message}</p>
+          <p className="form-error"> {errors.generic.message}</p>
         )}
         <div>
           <button disabled={isSubmitting} className="btn btn-primary">
@@ -92,4 +93,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default Signin;
