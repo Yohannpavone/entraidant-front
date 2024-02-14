@@ -37,7 +37,7 @@ function Homepage() {
           src={accueil}
           alt="image représentant deux mains jointes"
         />
-        <p className={`align-items-center ${styles.homepageText}`}>
+        <div className={`align-items-center ${styles.homepageText}`}>
           Bienvenue sur Entraidant, un havre virtuel dédié à tisser des liens
           solides et à fournir une assistance inestimable à ceux qui traversent
           des défis physiques, moteurs ou mentaux.
@@ -54,7 +54,7 @@ function Homepage() {
             inclusif et solidaire.
           </p>
           Rejoignez-nous dès aujourd'hui et découvrez la force de l'entraide !
-        </p>
+        </div>
       </div>
     </div>
   );

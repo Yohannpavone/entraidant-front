@@ -2,7 +2,7 @@
 import logo from "../../../public/img/logoEntraidant.png";
 import styles from "./AboutUs.module.scss"; 
 
-function QuiSommesNous() {
+function AboutUs() {
   return (
     <div>
       <div className={styles.container}>
@@ -17,4 +17,4 @@ function QuiSommesNous() {
   );
 }
 
-export default QuiSommesNous;
+export default AboutUs;

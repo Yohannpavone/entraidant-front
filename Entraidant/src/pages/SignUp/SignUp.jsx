@@ -3,11 +3,21 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
+import { createUser } from "../../apis/users.jsx";
 
 function SignUp() {
   const navigate = useNavigate();
+  // utilisation de la vérification des données avec yup
   const validationSchema = yup.object({
-    name: yup
+    username: yup
+      .string()
+      .required("Il faut préciser votre nom utilisateur")
+      .min(2, "Un vrai nom"),
+    firstname: yup
+      .string()
+      .required("Il faut préciser votre prénom")
+      .min(2, "Un vrai prénom"),
+    lastname: yup
       .string()
       .required("Il faut préciser votre nom")
       .min(2, "Un vrai nom"),
@@ -28,12 +38,16 @@ function SignUp() {
       ),
   });
 
+  // initialisation des valeurs par défault
   const initialValues = {
-    name: "",
+    username: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   };
 
+  // deconstruction de l'objet useform fourni par react-hook-form pour utiliser les fonctions utiles au projet
   const {
     handleSubmit,
     register,
@@ -43,7 +57,6 @@ function SignUp() {
   } = useForm({
     initialValues,
     resolver: yupResolver(validationSchema),
-    mode: "onSubmit",
   });
 
   const submit = handleSubmit(async (user) => {
@@ -65,16 +78,49 @@ function SignUp() {
       >
         <h2 className="mb-10">Inscription</h2>
         <div className="mb-10 d-flex flex-column ">
-          <label className="label" htmlFor="name">
+          <label className="label" htmlFor="username">
+            Nom d'utilisateur
+          </label>
+          <input
+            className="input"
+            type="text"
+            name="username"
+            id="username"
+            {...register("username")}
+          />
+          {errors.username && (
+            <p className="form-error">{errors.username.message}</p>
+          )}
+        </div>
+        <div className="mb-10 d-flex flex-column ">
+          <label className="label" htmlFor="firstname">
+            Prénom
+          </label>
+          <input
+            className="input"
+            type="text"
+            name="firstname"
+            id="firstname"
+            {...register("firstname")}
+          />
+          {errors.firstname && (
+            <p className="form-error">{errors.firstname.message}</p>
+          )}
+        </div>
+        <div className="mb-10 d-flex flex-column ">
+          <label className="label" htmlFor="lastname">
             Nom
           </label>
           <input
             className="input"
             type="text"
-            name="name"
-            {...register("name")}
+            name="lastname"
+            id="lastname"
+            {...register("lastname")}
           />
-          {errors.name && <p className="form-error">{errors.name.message}</p>}
+          {errors.lastname && (
+            <p className="form-error">{errors.lastname.message}</p>
+          )}
         </div>
         <div className="mb-10 d-flex flex-column">
           <label className="label" htmlFor="email">
@@ -84,18 +130,20 @@ function SignUp() {
             className="input"
             type="text"
             name="email"
+            id="email"
             {...register("email")}
           />
           {errors.email && <p className="form-error">{errors.email.message}</p>}
         </div>
         <div className="mb-10 d-flex flex-column">
-          <label className="label" htmlFor="email">
+          <label className="label" htmlFor="password">
             Password
           </label>
           <input
             className="input"
             type="password"
             name="password"
+            id="password"
             {...register("password")}
           />
           {errors.password && (
@@ -103,13 +151,14 @@ function SignUp() {
           )}
         </div>
         <div className="mb-10 d-flex flex-column">
-          <label className="label" htmlFor="email">
+          <label className="label" htmlFor="confirmPassword">
             Confirmation password
           </label>
           <input
             className="input"
             type="password"
-            name="password"
+            name="confirmPassword"
+            id="confirmPassword"
             {...register("confirmPassword")}
           />
           {errors?.confirmPassword && (
@@ -119,7 +168,7 @@ function SignUp() {
           )}
         </div>
         {errors.generic && (
-          <p className="form-erroor"> {errors.generic.message}</p>
+          <p className="form-error"> {errors.generic.message}</p>
         )}
         <div>
           <button disabled={isSubmitting} className="btn btn-primary">

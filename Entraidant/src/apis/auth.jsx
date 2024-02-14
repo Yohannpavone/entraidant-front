@@ -1,4 +1,4 @@
-const API_AUTH = "/api/auth";
+const API_AUTH = "https://entraidant-back.onrender.com/login/";
 
 export async function signin(credentials) {
   const response = await fetch(API_AUTH, {
@@ -20,14 +20,15 @@ export async function signin(credentials) {
   }
 }
 
-export async function getCurrentUser() {
-  const response = await fetch(`${API_AUTH}/current`);
-  return response.json();
+// export async function getCurrentUser() {
+//   const response = await fetch(API_AUTH);
+//   return response.json();
   
-}
+// }
 
 export async function signout() {
   await fetch(API_AUTH, {
     method: 'DELETE',
   })
 }
+
