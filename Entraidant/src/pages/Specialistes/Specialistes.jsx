@@ -246,11 +246,11 @@ function Specialiste() {
             value={searchTerm}
             onChange={handleChange}
             placeholder="Rechercher..."
-            className={styles.searchTerm} 
+            className={styles.searchTerm}
           />
 
           <button type="submit">Valider</button>
-          
+
         </form>
       </div>
       <div className={styles.buttonContainer}>
