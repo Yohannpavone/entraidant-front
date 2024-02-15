@@ -3,16 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
 import App from "./App/App.jsx";
 import ErrorPage from "./pages/ErrorPage/ErrorPage.jsx";
-import Homepage from "./pages/Homepage/Homepage.jsx";
-import Specialistes from "./pages/Specialistes/Specialistes.jsx";
-import AboutUs from "./pages/AboutUs/AboutUs.jsx"
-import Demarches from "./pages/Demarches/Demarches.jsx";
-import ServicesExchange from "./pages/ServicesExchange/ServicesExchange.jsx"
-import Messagerie from "./pages/Messagerie/Messagerie.jsx";
-import SignUp from "./pages/SignUp/SignUp.jsx";
-import SignIn from "./pages/SignIn/SignIn.jsx";
-import Profile from "./pages/Profile/Profile.jsx";
-import ServiceForm from'./pages/ServicesExchange/ServiceForm.jsx'
+import ServiceForm from './pages/ServicesExchange/ServiceForm.jsx'
 
 
 // import { rootLoader } from "./loaders/rootLoader.jsx";
@@ -28,6 +19,7 @@ const Messagerie = lazy(() => import("./pages/Messagerie/Messagerie.jsx"));
 const SignUp = lazy(() => import("./pages/SignUp/SignUp.jsx"));
 const SignIn = lazy(() => import("./pages/SignIn/SignIn.jsx"));
 const Profile = lazy(() => import("./pages/Profile/Profile.jsx"));
+
 
 
 //router permettant la navigation sur le site 
@@ -54,14 +46,14 @@ export const router = createBrowserRouter([
         path: "/demarches",
         element: <Demarches />,
       },
-    
+
       {
         path: "/services",
         element: <ServicesExchange />,
       },
       {
         path: "/servicesform",
-        element:<ServiceForm/>
+        element: <ServiceForm />
       },
 
       {
