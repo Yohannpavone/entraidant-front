@@ -20,7 +20,7 @@ const SignUp = lazy(() => import("./pages/SignUp/SignUp.jsx"));
 const SignIn = lazy(() => import("./pages/SignIn/SignIn.jsx"));
 const Profile = lazy(() => import("./pages/Profile/Profile.jsx"));
 
-
+//color
 //router permettant la navigation sur le site 
 export const router = createBrowserRouter([
   {
