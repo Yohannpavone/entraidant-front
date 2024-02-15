@@ -1,0 +1,75 @@
+@use "../../assets/styles/mixins" as mixin;
+
+.homepageLink {
+  height: 8rem;
+  width: 20%;
+  background: rgba(41, 128, 185, 1);
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  // border: 2px solid white;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.containerCardXs {
+  @include mixin.xs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 1rem;
+  }
+}
+
+.cardXs {
+  @include mixin.xs {
+    width: 15rem;
+    height: 7rem;
+    margin: 0 auto;
+    box-shadow: none;
+    p {
+      display: none;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+
+.mainContainerXs {
+  @include mixin.xs {
+    margin-top: 5rem;
+    p {
+      display: none;
+    }
+  }
+}
+
+.homepageText {
+  font-size: 1rem;
+  background-color: white;
+  width: 50%;
+  margin: 5rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.homepageImg {
+  width: 20%;
+  border-radius: 20px;
+  margin-left: 10rem;
+  margin-top: 2rem;
+}
+
+.homepageImgXs {
+  @include mixin.xs {
+    display: none;
+  }
+}
